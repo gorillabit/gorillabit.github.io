@@ -5,60 +5,342 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python-разработчик | Автоматизация и аналитика</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background: #0f172a; color: #f8fafc; line-height: 1.6; }
-        .container { max-width: 800px; margin: 0 auto; padding: 2rem; }
-        header { text-align: center; margin-bottom: 3rem; }
-        .logo { font-size: 2.5rem; font-weight: 700; background: linear-gradient(45deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
-        .service-card { background: #1e293b; padding: 1.5rem; margin: 1rem 0; border-radius: 10px; border-left: 4px solid #3b82f6; }
-        .price { color: #10b981; font-weight: bold; margin-top: 0.5rem; }
-        .contact-btn { display: inline-block; background: #3b82f6; color: white; padding: 12px 30px; border-radius: 25px; text-decoration: none; margin: 1rem 0; }
-        footer { margin-top: 3rem; text-align: center; color: #94a3b8; }
-        .doc-link { display: inline-block; background: #374151; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; margin: 0.5rem; border: 1px solid #4b5563; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 2px solid #3b82f6;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Services */
+        .services {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: #f1f5f9;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            background: #1e293b;
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid #334155;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #3b82f6;
+        }
+        
+        .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #10b981;
+            margin: 1rem 0;
+        }
+        
+        /* Features */
+        .features {
+            background: #1e293b;
+            padding: 4rem 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #3b82f6;
+        }
+        
+        /* Process */
+        .process {
+            padding: 4rem 0;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .step-number {
+            background: #3b82f6;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: 700;
+        }
+        
+        /* Documents */
+        .documents {
+            background: #1e293b;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .doc-link {
+            display: inline-block;
+            background: #374151;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin: 0.5rem;
+            border: 1px solid #4b5563;
+            transition: all 0.3s ease;
+        }
+        
+        .doc-link:hover {
+            background: #3b82f6;
+            border-color: #3b82f6;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0f172a;
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid #334155;
+        }
+        
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            margin: 0.5rem 0;
+            color: #cbd5e1;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <!-- Header -->
+    <header>
+        <div class="container">
             <div class="logo">PythonDev</div>
-            <p>Разработка скриптов и IT-консультации</p>
-            <a href="https://t.me/ваш_telegram" class="contact-btn">Написать в Telegram</a>
-        </header>
-
-        <div class="service-card">
-            <h3>⚙️ Мини-скрипты и доработки</h3>
-            <p>Несложные правки кода, небольшие скрипты, консультации</p>
-            <div class="price">от 500 руб.</div>
+            <div class="tagline">Разработка скриптов и IT-консультации для частных лиц и бизнеса</div>
+            <a href="#contacts" class="contact-btn">Написать в Telegram</a>
         </div>
+    </header>
 
-        <div class="service-card">
-            <h3>📊 Базовая консультация (30 мин)</h3>
-            <p>Ответы на вопросы, разбор простых задач</p>
-            <div class="price">1 000 руб.</div>
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Мои услуги</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3 class="service-title">Разработка Python-скриптов</h3>
+                    <p>Автоматизация рутинных задач, парсинг данных, боты для Telegram, работа с API, аналитические инструменты.</p>
+                    <div class="price">от 4 000 руб.</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3 class="service-title">IT-консультации</h3>
+                    <p>Персональные консультации по Python, анализу данных, автоматизации процессов. Объясняю сложные вещи простым языком.</p>
+                    <div class="price">5 000 руб./час</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3 class="service-title">Техническая поддержка</h3>
+                    <p>Доработка существующих скриптов, решение проблем с кодом, оптимизация производительности.</p>
+                    <div class="price">3 000 руб./час</div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="service-card">
-            <h3>🔧 Стандартная консультация (1 час)</h3>
-            <p>Подробный разбор темы, анализ кода</p>
-            <div class="price">2 000 руб.</div>
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают меня</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Решение под вашу задачу</h3>
+                    <p>Не шаблонные решения, а индивидуальный подход к каждой задаче</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Скорость выполнения</h3>
+                    <p>Быстрый старт и оперативное выполнение даже сложных проектов</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📝</div>
+                    <h3>Полная документация</h3>
+                    <p>Работаю официально с полным пакетом документов для юридической чистоты</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Конфиденциальность</h3>
+                    <p>Гарантия полной конфиденциальности ваших данных и бизнес-процессов</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="service-card">
-            <h3>🚀 Комплексный скрипт</h3>
-            <p>Разработка полноценного решения под ключ</p>
-            <div class="price">4 000 - 10 000 руб.</div>
+    <!-- Process -->
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">Как мы будем работать</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Заявка</h3>
+                    <p>Вы описываете задачу в Telegram</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Обсуждение</h3>
+                    <p>Уточняем детали и согласовываем бюджет</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Оплата</h3>
+                    <p>Вы оплачиваете услугу по реквизитам ИП</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Результат</h3>
+                    <p>Вы получаете готовое решение и документы</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- ДОБАВЬТЕ СЮДА ССЫЛКИ НА ДОКУМЕНТЫ -->
-        <div style="text-align: center; margin: 2rem 0;">
-            <a href="ВАША_ССЫЛКА_НА_ОФЕРТУ" class="doc-link" target="_blank">📄 Договор-оферта</a>
-            <a href="ВАША_ССЫЛКА_НА_АКТ" class="doc-link" target="_blank">📋 Образец акта</a>
+    <!-- Documents -->
+    <section class="documents">
+        <div class="container">
+            <h2 class="section-title">Документооборот</h2>
+            <p>Вся работа ведется официально с полным пакетом документов</p>
+            <div style="margin-top: 2rem;">
+                <a href="#" class="doc-link">📄 Договор-оферта</a>
+                <a href="#" class="doc-link">📋 Образец акта</a>
+            </div>
         </div>
+    </section>
 
-        <footer>
-            <p>ИП Ефремов Дмитрий Михайлович</p>
-            <p>ОГРНИП 325930100079331 | ИНН 614057088747</p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer id="contacts">
+        <div class="container">
+            <div class="contact-info">
+                <h2 class="section-title">Контакты</h2>
+                <div class="contact-item">📱 Telegram: @your_username</div>
+                <div class="contact-item">📧 Email: your@email.com</div>
+                <div class="contact-item">📞 Телефон: +7 XXX XXX-XX-XX</div>
+            </div>
+            <p>ИП Ефремов Дмитрий Михайлович | ОГРНИП 325930100079331 | ИНН 614057088747</p>
+        </div>
+    </footer>
 </body>
 </html>
