@@ -8,5 +8,5 @@ function FindProxyForURL(url, host) {
         host === "localhost") {
         return "DIRECT";
     }
-    return "SOCKS5 root:admin@185.180.199.90:1080; PROXY 85.1.75.2:3128; PROXY 91.108.82.25:3128; DIRECT";
+    return "SOCKS5 185.180.199.90:1080; PROXY 85.1.75.2:3128; PROXY 91.108.82.25:3128; DIRECT";
 }
