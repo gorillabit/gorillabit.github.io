@@ -1,4 +1,4 @@
-function FindProxyForURL(url, host) 
+function FindProxyForURL(url, host) {
     if (isPlainHostName(host) ||
         shExpMatch(host, "*.local") ||
         shExpMatch(host, "192.168.*") ||
@@ -8,7 +8,5 @@ function FindProxyForURL(url, host)
         host === "localhost") {
         return "DIRECT";
     }
-    
-    // Основной прокси
-    return "PROXY 91.108.82.25:3128; PROXY 85.1.75.2:3128; PROXY 193.148.59.164:3128; DIRECT";
+    return "SOCKS5 guest:admin@45.128.75.6:1080; PROXY 85.1.75.2:3128; PROXY 91.108.82.25:3128; DIRECT";
 }
