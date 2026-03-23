@@ -68,5 +68,5 @@ function FindProxyForURL(url, host) {
     }
     
     // Основной прокси
-    return "SOCKS5 185.180.199.90:1080; PROXY 85.1.75.2:3128; PROXY 91.108.82.25:3128; DIRECT";
+    return "PROXY 91.108.82.25:3128; PROXY 85.1.75.2:3128; DIRECT";
 }
