@@ -1,5 +1,4 @@
 function FindProxyForURL(url, host) {
-    // Локальные адреса идут напрямую
     if (isPlainHostName(host) ||
         shExpMatch(host, "*.local") ||
         shExpMatch(host, "192.168.*") ||
@@ -16,8 +15,6 @@ function FindProxyForURL(url, host) {
         "SOCKS5 178.17.50.121:1080",
         "SOCKS5 185.180.199.90:1080"
     ];
-    
-    // Перемешиваем массив случайно
     for (var i = proxies.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = proxies[i];
