@@ -8,19 +8,5 @@ function FindProxyForURL(url, host) {
         host === "localhost") {
         return "DIRECT";
     }
-    var proxies = [
-        "PROXY 85.1.75.2:3128",
-        "PROXY 185.153.92.1:3128",
-        "PROXY 193.148.59.164:3128",
-        "SOCKS5 178.17.50.121:1080",
-        "SOCKS5 185.180.199.90:1080"
-    ];
-    for (var i = proxies.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = proxies[i];
-        proxies[i] = proxies[j];
-        proxies[j] = temp;
-    }
-    
-    return proxies.join("; ") + "; DIRECT";
+    return "PROXY 77.223.107.108:3128; PROXY 85.1.75.2:3128; PROXY 91.108.82.25:3128; DIRECT";
 }
